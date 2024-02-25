@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     /*============================== Configurations ==============================*/
     :root {
         /*=============== COLORS ===============*/
+        --tundora-color: hsl(0, 0%, 27%);
         --white-color: hsl(0, 0%, 100%);
         --royal-blue-color: hsl(214, 77.5%, 52%);
 
@@ -24,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
         /*=============== TEXT COLORS ===============*/
         --button-text-color: var(--royal-blue-color);
         --white-text-color: var(--white-color);
+        --product-title-text-color: var(--tundora-color);
+        --view-product-text-color: var(--royal-blue-color);
 
         /*=============== FONTS ===============*/
         --default-font: "Raleway", "Arial" , "Helvetica", sans-serif;
