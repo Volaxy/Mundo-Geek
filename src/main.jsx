@@ -11,17 +11,19 @@ const GlobalStyle = createGlobalStyle`
     /*============================== Configurations ==============================*/
     :root {
         /*=============== COLORS ===============*/
+        --white-color: hsl(0, 0%, 100%);
         --royal-blue-color: hsl(214, 77.5%, 52%);
 
 
         /*=============== BACKGROUNDS ===============*/
-    
+        --button-background-color: var(--royal-blue-color);
     
         /*=============== BORDERS ===============*/
         --button-border-color: var(--royal-blue-color);
     
         /*=============== TEXT COLORS ===============*/
         --button-text-color: var(--royal-blue-color);
+        --white-text-color: var(--white-color);
 
         /*=============== FONTS ===============*/
         --default-font: "Raleway", "Arial" , "Helvetica", sans-serif;
