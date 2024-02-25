@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import Logo from "./images/logo.svg";
+import Logo from "../../images/logo.svg";
 import Search from "./images/search.svg";
 
 import { Button } from "../Button/Button";

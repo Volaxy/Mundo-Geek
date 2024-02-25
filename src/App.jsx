@@ -4,8 +4,11 @@ import styled from "styled-components";
 import { Header } from "./components/Header/Header";
 import { Banner } from "./components/Banner/Banner";
 import { Category } from "./components/Category/Category";
+import { Footer } from "./components/Footer/Footer";
 
 const ProductsStyled = styled.section`
+    background-color: var(--products-background-color);
+    
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -25,6 +28,8 @@ export function App() {
                     <Category />
                 </ProductsStyled>
             </main>
+
+            <Footer />
         </React.Fragment>
     );
 }

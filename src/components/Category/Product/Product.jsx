@@ -28,6 +28,7 @@ const ViewProduct = styled.button`
     padding: 0;
 
     color: var(--view-product-text-color);
+    font-weight: bold;
     text-align: left;
 
     cursor: pointer;
