@@ -42,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
         --black-text-color: var(--black-color);
         --white-text-color: var(--white-color);
         --product-title-text-color: var(--tundora-color);
+        --view-all-products-text-color: var(--royal-blue-color);
         --title-text-color: var(--tundora-color);
         --view-product-text-color: var(--royal-blue-color);
         --footer-link-text-color: var(--tundora-color);
@@ -59,6 +60,10 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: var(--default-font);
         font-size: 16px;
+    }
+
+    a {
+        text-decoration: none;
     }
 `;
 

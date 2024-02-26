@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
 import Logo from "../../images/logo.svg";
-import Search from "./images/search.svg";
 
 import { Button } from "../Button/Button";
 import { NavLink } from "react-router-dom";
@@ -31,7 +31,7 @@ export function Header() {
                 </Button>
             </NavLink>
 
-            <img src={Search} alt="ícone para busca de produtos" />
+            <FaMagnifyingGlass size="1.25rem" />
         </HeaderStyled>
     );
 }

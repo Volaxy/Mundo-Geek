@@ -1,12 +1,32 @@
 import styled from "styled-components";
+import { GoArrowRight } from "react-icons/go";
+
 import { Product } from "./Product/Product";
+import { NavLink } from "react-router-dom";
 
 const CategoryWraper = styled.article`
     padding: 1rem;
 `;
 
+const Header = styled.header`
+    display: flex;
+    justify-content: space-between;
+`;
+
 const Title = styled.h2`
     font-size: 1.25rem;
+    font-weight: bold;
+`;
+
+const ViewAll = styled.button`
+    background-color: transparent;
+    
+    display: flex;
+    gap: 0.5rem;
+
+    border: none;
+
+    color: var(--view-all-products-text-color);
     font-weight: bold;
 `;
 
@@ -22,9 +42,16 @@ const Products = styled.section`
 export function Category() {
     return (
         <CategoryWraper>
-            <header>
+            <Header>
                 <Title>Star Wars</Title>
-            </header>
+
+                <NavLink to="/products">
+                    <ViewAll>
+                        Ver tudo
+                        <GoArrowRight style={{ color: "var(--view-all-products-text-color)" }} />
+                    </ViewAll>
+                </NavLink>
+            </Header>
 
             <Products>
                 <Product />
