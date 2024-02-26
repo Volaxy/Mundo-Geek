@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Label = styled.span`
+const Label = styled.label`
     background-color: var(--input-background-color);
 
     display: flex;
@@ -27,11 +27,11 @@ const InputStyled = styled.input`
     outline: none;
 `;
 
-export function Input() {
+export function Input({ description, type = "text" }) {
     return (
         <Label>
-            <Description>Nome</Description>
-            <InputStyled type="text" />
+            <Description>{description}</Description>
+            <InputStyled type={type} />
         </Label>
     );
 }

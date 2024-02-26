@@ -12,12 +12,12 @@ const ProductImage = styled.img`
 `;
 
 const Title = styled.h3`
-    color: var(--product-title-text-color);
+    color: var(--title-text-color);
     font-weight: 500;
 `;
 
 const Price = styled.h4`
-    color: var(--product-title-text-color);
+    color: var(--title-text-color);
     font-weight: bold;
 `;
 

@@ -98,7 +98,7 @@ export function Footer() {
                 <Legend>Fale com a gente</Legend>
 
                 <Inputs>
-                    <Input />
+                    <Input description="Nome" />
                     <Message placeholder="Escreva sua mensagem"></Message>
 
                     <Button

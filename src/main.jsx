@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import 'reset-css';
 import 'normalize.css';
 
-import { App } from "./App.jsx";
+import { App } from "./app.jsx";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
         --button-background-color: var(--royal-blue-color);
         --input-background-color: var(--white-color);
         --products-background-color: var(--wild-sand-color);
+        --login-background-color: var(--wild-sand-color);
         --footer-background-color: var(--hawkes-blue-color);
         --develop-by-background-color: var(--white-color);
         
@@ -41,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
         --black-text-color: var(--black-color);
         --white-text-color: var(--white-color);
         --product-title-text-color: var(--tundora-color);
+        --title-text-color: var(--tundora-color);
         --view-product-text-color: var(--royal-blue-color);
         --footer-link-text-color: var(--tundora-color);
         --form-legend-text-color: var(--tundora-color);
