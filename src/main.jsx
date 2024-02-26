@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
         --input-background-color: var(--white-color);
         --products-background-color: var(--wild-sand-color);
         --login-background-color: var(--wild-sand-color);
+        --new-product-background-color: var(--wild-sand-color);
         --footer-background-color: var(--hawkes-blue-color);
         --develop-by-background-color: var(--white-color);
         

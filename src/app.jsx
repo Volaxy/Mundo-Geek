@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Index } from "./pages/Index";
 import { Login } from "./pages/Login";
 import { Products } from "./pages/Products";
+import { NewProduct } from "./pages/NewProduct";
 
 export function App() {
     return (
@@ -17,6 +18,7 @@ export function App() {
                 <Route path="/" element={<Index />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/products" element={<Products />} />
+                <Route path="/new-product" element={<NewProduct />} />
             </Routes>
             
             <Footer />

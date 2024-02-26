@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { Button } from "../components/Button/Button";
 import { Product } from "../components/Category/Product/Product";
+import { NavLink } from "react-router-dom";
 
 const ProductsStyled = styled.section`
     padding: 3rem 2rem;
@@ -32,7 +33,14 @@ export function Products() {
         <ProductsStyled>
             <Header>
                 <Title>Todos os Produtos</Title>
-                <Button backgroundColor="var(--button-background-color)" color="var(--white-text-color)">Adicionar Produto</Button>
+                <NavLink to="/new-product">
+                    <Button
+                        backgroundColor="var(--button-background-color)"
+                        color="var(--white-text-color)"
+                    >
+                        Adicionar Produto
+                    </Button>
+                </NavLink>
             </Header>
 
             <AllProducts>
