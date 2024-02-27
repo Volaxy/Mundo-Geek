@@ -36,6 +36,8 @@ const ViewAll = styled.button`
 
     color: var(--view-all-products-text-color);
     font-weight: bold;
+
+    cursor: pointer;
 `;
 
 const Products = styled.section`

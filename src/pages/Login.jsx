@@ -5,6 +5,12 @@ import { Button } from "../components/Button/Button";
 
 const LoginStyled = styled.section`
     background-color: var(--login-background-color);
+
+    padding: 3rem 2rem;
+
+    @media screen and (min-width: 1280px) {
+        padding: 5rem 4rem;
+    }
 `;
 
 const Form = styled.form`
@@ -17,7 +23,10 @@ const Form = styled.form`
     gap: 1.5rem;
 
     margin: auto;
-    padding: 3rem 2rem;
+
+    @media screen and (min-width: 768px) {
+        width: 50%;
+    }
 `;
 
 const Title = styled.legend`
