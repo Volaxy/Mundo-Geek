@@ -5,6 +5,8 @@ const ButtonStyled = styled.button`
 
     width: ${props => props.$width || "initial"};
 
+    align-self: ${props => props.$alignSelf || "initial"};
+
     border: 1px solid var(--button-border-color);
     padding: 0.75rem 2rem;
 
@@ -24,12 +26,13 @@ const ButtonStyled = styled.button`
     }
 `;
 
-export function Button({ children, backgroundColor, width, widthTablet, color }) {
+export function Button({ children, backgroundColor, width, widthTablet, alignSelf, color }) {
     return (
         <ButtonStyled
             $backgroundColor={backgroundColor}
             $width={width}
             $widthTablet={widthTablet}
+            $alignSelf={alignSelf}
             $color={color}
         >
             {children}

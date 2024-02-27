@@ -16,6 +16,10 @@ const BannerStyled = styled.header`
     padding: 1rem;
 
     color: var(--white-text-color);
+
+    @media screen and (min-width: 1280px) {
+        padding: 2rem 7.5rem;
+    }
 `;
 
 const ContentWraper = styled.div`

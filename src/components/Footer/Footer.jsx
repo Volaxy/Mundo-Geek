@@ -15,11 +15,22 @@ const FooterGridWraper = styled.div`
         display: grid;
         grid-template-columns: 1fr 2fr;
     }
+
+    @media screen and (min-width: 1280px) {
+        grid-template-columns: repeat(2, 1fr);
+
+        padding: 4rem 6rem;
+    }
 `;
 
 const FooterNav = styled.nav`
     @media screen and (min-width: 768px) {
         text-align: left;
+    }
+
+    @media screen and (min-width: 1280px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 `;
 
@@ -40,6 +51,10 @@ const Links = styled.ul`
 
     margin-top: 1rem;
     padding: 1rem;
+
+    @media screen and (min-width: 1280px) {
+        margin-top: 0;
+    }
 `;
 
 const Link = styled.a`
@@ -129,6 +144,7 @@ export function Footer() {
                         
                         <Button
                             backgroundColor="var(--button-background-color)"
+                            alignSelf="flex-start"
                             color="var(--white-text-color)"
                         >
                             Enviar Mensagem

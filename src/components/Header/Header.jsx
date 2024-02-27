@@ -17,6 +17,10 @@ const HeaderStyled = styled.header`
     @media screen and (min-width: 768px) {
         align-items: stretch;
     }
+
+    @media screen and (min-width: 1280px) {
+        padding: 2rem 5rem;
+    }
 `;
 
 const NavLinkLogoStyled = styled(NavLink)`
@@ -43,6 +47,10 @@ const SearchWrapper = styled.div`
 
     &:focus-within {
         outline: 2px solid var(--input-focus-border-color);
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 17.5rem;
     }
 `;
 

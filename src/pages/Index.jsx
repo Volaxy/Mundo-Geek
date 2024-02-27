@@ -13,6 +13,10 @@ const ProductsStyled = styled.section`
     @media screen and (min-width: 768px) {
         padding-top: 1.5rem;
     }
+
+    @media screen and (min-width: 1280px) {
+        padding: 4rem 7.5rem;
+    }
 `;
 
 export function Index() {

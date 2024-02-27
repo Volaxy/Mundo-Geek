@@ -10,6 +10,10 @@ const CategoryWraper = styled.article`
     @media screen and (min-width: 768px) {
         margin-bottom: 2rem;
     }
+
+    @media screen and (min-width: 1280px) {
+        padding: unset;
+    }
 `;
 
 const Header = styled.header`
@@ -44,6 +48,10 @@ const Products = styled.section`
 
     @media screen and (min-width: 768px) {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media screen and (min-width: 1280px) {
+        grid-template-columns: repeat(6, 1fr);
     }
 `;
 

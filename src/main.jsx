@@ -98,6 +98,25 @@ const GlobalStyle = createGlobalStyle`
             display: initial;
         }
     }
+
+    @media screen and (min-width: 1280px) {
+        /*============================== GENERIC ELEMENTS ==============================*/
+        html,
+        body {
+            font-size: 24px;
+        }
+
+
+        /*============================== GENERIC CLASSES ==============================*/
+        .mobile,
+        .tablet {
+            display: none;
+        }
+
+        .desktop {
+            display: initial;
+        }
+    }
 `;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
