@@ -6,6 +6,10 @@ import { NavLink } from "react-router-dom";
 
 const CategoryWraper = styled.article`
     padding: 1rem;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 2rem;
+    }
 `;
 
 const Header = styled.header`
@@ -37,6 +41,10 @@ const Products = styled.section`
     gap: 1rem;
 
     margin-top: 1rem;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
 `;
 
 export function Category() {
@@ -54,6 +62,9 @@ export function Category() {
             </Header>
 
             <Products>
+                <Product />
+                <Product />
+                <Product />
                 <Product />
                 <Product />
                 <Product />

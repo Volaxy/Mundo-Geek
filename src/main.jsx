@@ -82,6 +82,14 @@ const GlobalStyle = createGlobalStyle`
     
     /*=============== RESPONSIVE LAYOUTS ===============*/
     @media screen and (min-width: 768px) {
+        /*============================== GENERIC ELEMENTS ==============================*/
+        html,
+        body {
+            font-size: 20px;
+        }
+
+
+        /*============================== GENERIC CLASSES ==============================*/
         .mobile {
             display: none;
         }

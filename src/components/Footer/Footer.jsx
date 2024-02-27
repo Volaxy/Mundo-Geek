@@ -10,8 +10,27 @@ const FooterStyled = styled.footer`
     text-align: center;
 `;
 
+const FooterGridWraper = styled.div`
+    @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+`;
+
+const FooterNav = styled.nav`
+    @media screen and (min-width: 768px) {
+        text-align: left;
+    }
+`;
+
 const LogoStyled = styled.img`
     margin-top: 1rem;
+
+    @media screen and (min-width: 768px) {
+        width: 10rem;
+        
+        margin-left: 1rem;
+    }
 `;
 
 const Links = styled.ul`
@@ -38,6 +57,10 @@ const Form = styled.form`
     padding: 1rem;
 
     text-align: left;
+
+    @media screen and (min-width: 768px) {
+        margin-top: 0;
+    }
 `;
 
 const Legend = styled.legend`
@@ -81,34 +104,38 @@ const DevelopBy = styled.div`
 export function Footer() {
     return (
         <FooterStyled>
-            <LogoStyled src={Logo} alt="Logotipo do Mundo Geek" />
+            <FooterGridWraper>
+                <FooterNav>
+                    <LogoStyled src={Logo} alt="Logotipo do Mundo Geek" />
 
-            <nav>
-                <Links>
-                    <li><Link href="">Quem somos</Link></li>
-                    <li><Link href="">Política de Privacidade</Link></li>
-                    <li><Link href="">Programa de Fidelidade</Link></li>
-                    <li><Link href="">Nossas Tendas</Link></li>
-                    <li><Link href="">Quero ser um franqueado</Link></li>
-                    <li><Link href="">Anuncie Aqui</Link></li>
-                </Links>
-            </nav>
+                    <nav>
+                        <Links>
+                            <li><Link href="">Quem somos</Link></li>
+                            <li><Link href="">Política de Privacidade</Link></li>
+                            <li><Link href="">Programa de Fidelidade</Link></li>
+                            <li><Link href="">Nossas Tendas</Link></li>
+                            <li><Link href="">Quero ser um franqueado</Link></li>
+                            <li><Link href="">Anuncie Aqui</Link></li>
+                        </Links>
+                    </nav>
+                </FooterNav>
 
-            <Form>
-                <Legend>Fale com a gente</Legend>
+                <Form>
+                    <Legend>Fale com a gente</Legend>
 
-                <Inputs>
-                    <Input description="Nome" />
-                    <Message placeholder="Escreva sua mensagem"></Message>
-
-                    <Button
-                        backgroundColor="var(--button-background-color)"
-                        color="var(--white-text-color)"
-                    >
-                        Enviar Mensagem
-                    </Button>
-                </Inputs>
-            </Form>
+                    <Inputs>
+                        <Input description="Nome" />
+                        <Message placeholder="Escreva sua mensagem"></Message>
+                        
+                        <Button
+                            backgroundColor="var(--button-background-color)"
+                            color="var(--white-text-color)"
+                        >
+                            Enviar Mensagem
+                        </Button>
+                    </Inputs>
+                </Form>
+            </FooterGridWraper>
 
             <DevelopBy>
                 Desenvolvido por Gustavo Martins Pereira 2024

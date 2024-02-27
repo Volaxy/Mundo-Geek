@@ -9,6 +9,10 @@ const ProductsStyled = styled.section`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 1.5rem;
+    }
 `;
 
 export function Index() {
