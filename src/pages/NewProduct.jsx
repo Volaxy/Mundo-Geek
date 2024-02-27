@@ -11,6 +11,10 @@ const Form = styled.form`
     gap: 1rem;
 
     padding: 1rem;
+
+    @media screen and (min-width: 1280px) {
+        padding: 2.75rem 15rem;
+    }
 `;
 
 const Title = styled.legend`
