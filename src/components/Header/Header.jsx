@@ -13,25 +13,82 @@ const HeaderStyled = styled.header`
     gap: 1rem;
 
     padding: 1rem;
+
+    @media screen and (min-width: 768px) {
+        align-items: stretch;
+    }
+`;
+
+const NavLinkLogoStyled = styled(NavLink)`
+    align-self: center;
+`;
+
+const LogoStyled = styled.img`
+    @media screen and (min-width: 768px) {
+        width: 10rem;
+    }
+`;
+
+const SearchWrapper = styled.div`
+    background-color: var(--search-input-background-color);
+
+    position: relative;
+    
+    justify-self: flex-start;
+
+    border-radius: 20px;
+    margin-right: auto;
+
+    overflow: hidden;
+
+    &:focus-within {
+        outline: 2px solid var(--input-focus-border-color);
+    }
+`;
+
+const SearchInput = styled.input`
+    background-color: transparent;
+    
+    width: 75%;
+    height: -webkit-fill-available;
+
+    border: none;
+    padding: 0.75rem 1rem;
+
+    outline: none;
+`;
+
+const MagnifyingGlassIcon = styled(FaMagnifyingGlass)`
+    top: 50%;
+    right: 1rem;
+    
+    position: absolute;
+    
+    transform: translateY(-50%);
 `;
 
 export function Header() {
     return (
         <HeaderStyled>
-            <NavLink to="/">
-                <img src={Logo} alt="Logo do Mundo Geek" />
-            </NavLink>
+            <NavLinkLogoStyled to="/">
+                <LogoStyled src={Logo} alt="Logo do Mundo Geek" />
+            </NavLinkLogoStyled>
+
+            <SearchWrapper>
+                <SearchInput className="tablet desktop" type="text" placeholder="O que deseja buscar?" />
+                <MagnifyingGlassIcon />
+            </SearchWrapper>
 
             <NavLink to="/login">
                 <Button
-                    maxWidth="10rem"
-                    flex="1 1 0"
+                    width="7rem"
+                    widthTablet="12.5rem"
                 >
                     Login
                 </Button>
             </NavLink>
 
-            <FaMagnifyingGlass size="1.25rem" />
+            <FaMagnifyingGlass className="mobile" size="1.25rem" />
         </HeaderStyled>
     );
 }

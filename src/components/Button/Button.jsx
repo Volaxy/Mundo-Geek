@@ -3,12 +3,10 @@ import styled from "styled-components";
 const ButtonStyled = styled.button`
     background-color: ${props => props.$backgroundColor || "transparent"};
 
-    max-width: ${props => props.$maxWidth || "initial"};
-
-    flex: ${props => props.$flex || "initial"};
+    width: ${props => props.$width || "initial"};
 
     border: 1px solid var(--button-border-color);
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2rem;
 
     color: ${props => props.$color || "var(--button-text-color)"};
     font-weight: 600;
@@ -20,14 +18,18 @@ const ButtonStyled = styled.button`
     &:hover {
         background-color: color-mix(in srgb, ${props => props.$backgroundColor || "transparent"}, hsla(0, 0%, 0%, 0.5) 10%);
     }
+
+    @media screen and (min-width: 768px) {
+        width: ${props => props.$widthTablet || "initial"};
+    }
 `;
 
-export function Button({ children, backgroundColor, maxWidth, flex, color }) {
+export function Button({ children, backgroundColor, width, widthTablet, color }) {
     return (
         <ButtonStyled
             $backgroundColor={backgroundColor}
-            $maxWidth={maxWidth}
-            $flex={flex}
+            $width={width}
+            $widthTablet={widthTablet}
             $color={color}
         >
             {children}

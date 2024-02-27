@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
         /*=============== BACKGROUNDS ===============*/
         --button-background-color: var(--royal-blue-color);
         --input-background-color: var(--white-color);
+        --search-input-background-color: var(--wild-sand-color);
         --products-background-color: var(--wild-sand-color);
         --login-background-color: var(--wild-sand-color);
         --new-product-background-color: var(--wild-sand-color);
@@ -54,6 +55,10 @@ const GlobalStyle = createGlobalStyle`
 
         /*=============== FONTS ===============*/
         --default-font: "Raleway", "Arial" , "Helvetica", sans-serif;
+
+
+        /*=============== MEASURES ===============*/
+        --tablet-layout-size: 48rem;
     }
     
     /*============================== GENERIC ELEMENTS ==============================*/
@@ -66,6 +71,25 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
     }
+
+    
+    /*============================== GENERIC CLASSES ==============================*/
+    .tablet,
+    .desktop {
+        display: none;
+    }
+    
+    
+    /*=============== RESPONSIVE LAYOUTS ===============*/
+    @media screen and (min-width: 768px) {
+        .mobile {
+            display: none;
+        }
+
+        .tablet {
+            display: initial;
+        }
+    }
 `;
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -73,5 +97,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <GlobalStyle />
 
         <App />
-    </React.StrictMode>,
+    </React.StrictMode>
 );
