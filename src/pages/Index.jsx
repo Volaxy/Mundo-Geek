@@ -20,14 +20,6 @@ const ProductsStyled = styled.section`
 `;
 
 export function Index() {
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
-    // Use backendUrl para formar a URL completa
-    fetch(`${backendUrl}/products`)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
-
     return (
         <main>
             <Banner />
