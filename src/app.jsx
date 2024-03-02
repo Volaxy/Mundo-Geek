@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
@@ -129,16 +129,22 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export function App() {
+    const [user, setUser] = useState("");
+
+    function authenticate(user) {
+        setUser(user);
+    }
+
     return (
         <BrowserRouter>
             <GlobalStyle />
 
-            <Header />
+            <Header user={user} />
 
             <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<Login onAuthenticate={authenticate} />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="/new-product" element={<NewProduct />} />
             </Routes>

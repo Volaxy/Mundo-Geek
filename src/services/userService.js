@@ -20,6 +20,22 @@ async function register(username, password) {
     }
 }
 
+async function login(username, password) {
+    try {
+        const response = await userAPI.post("/login", {
+            username,
+            password,
+        });
+
+        const user = response.data.username;
+
+        return user;
+    } catch(error) {
+        throw new UserError(error.response ? error.response.data.error : error.message);
+    }
+}
+
 export {
     register,
+    login,
 };

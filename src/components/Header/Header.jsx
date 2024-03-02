@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
-import Logo from "../../images/logo.svg";
-
 import { Button } from "../Button/Button";
 import { NavLink } from "react-router-dom";
+
+import Logo from "../../images/logo.svg";
+import User from "./images/user.svg";
 
 const HeaderStyled = styled.header`
     display: flex;
@@ -75,7 +76,7 @@ const MagnifyingGlassIcon = styled(FaMagnifyingGlass)`
     transform: translateY(-50%);
 `;
 
-export function Header() {
+export function Header({ user }) {
     return (
         <HeaderStyled>
             <NavLinkLogoStyled to="/">
@@ -87,14 +88,18 @@ export function Header() {
                 <MagnifyingGlassIcon />
             </SearchWrapper>
 
-            <NavLink to="/login">
-                <Button
-                    width="7rem"
-                    widthTablet="12.5rem"
-                >
-                    Login
-                </Button>
-            </NavLink>
+            {user ? 
+                <img src={User} alt="" />
+                :
+                <NavLink to="/login">
+                    <Button
+                        width="7rem"
+                        widthTablet="12.5rem"
+                    >
+                        Login
+                    </Button>
+                </NavLink>
+            }
 
             <FaMagnifyingGlass className="mobile" size="1.25rem" />
         </HeaderStyled>
