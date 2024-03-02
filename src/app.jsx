@@ -36,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
         --search-input-background-color: var(--wild-sand-color);
         --products-background-color: var(--wild-sand-color);
         --login-background-color: var(--wild-sand-color);
+        --all-products-background-color: var(--wild-sand-color);
         --new-product-background-color: var(--wild-sand-color);
         --footer-background-color: var(--hawkes-blue-color);
         --develop-by-background-color: var(--white-color);

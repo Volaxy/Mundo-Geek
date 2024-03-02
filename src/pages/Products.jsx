@@ -5,6 +5,8 @@ import { Product } from "../components/Category/Product/Product";
 import { NavLink } from "react-router-dom";
 
 const ProductsStyled = styled.section`
+    background-color: var(--all-products-background-color);
+    
     padding: 3rem 2rem;
 `;
 

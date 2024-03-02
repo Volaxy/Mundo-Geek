@@ -47,7 +47,7 @@ export function Input({ description, type = "text", required, onChange }) {
 
             <InputStyled
                 type={type}
-                required
+                required={required}
                 onChange={onChange}
             />
         </Label>
