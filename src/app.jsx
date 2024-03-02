@@ -1,6 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "sonner";
 
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
@@ -23,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
         --silver-color: hsl(0, 0%, 78%);
         --wild-sand-color: hsl(0, 0%, 96%);
         --white-color: hsl(0, 0%, 100%);
+        --red-color: hsl(0, 100%, 50%);
         --royal-blue-color: hsl(214, 77%, 52%);
         --royal-blue-50-color: hsla(214, 77%, 52%, 0.5);
         --hawkes-blue-color: hsl(214, 82%, 95%);
@@ -57,6 +59,7 @@ const GlobalStyle = createGlobalStyle`
         --form-legend-text-color: var(--tundora-color);
         --input-description-text-color: var(--silver-chalice-color);
         --develop-by-text-color: var(--tundora-color);
+        --error-message-text-color: var(--red-color);
 
 
         /*=============== FONTS ===============*/
@@ -141,6 +144,8 @@ export function App() {
             </Routes>
 
             <Footer />
+
+            <Toaster richColors  />
         </BrowserRouter>
     );
 }

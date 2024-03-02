@@ -17,7 +17,17 @@ const Label = styled.label`
 `;
 
 const Description = styled.span`
+    display: flex;
+    gap: 0.25rem;
+
     color: var(--input-description-text-color);
+`;
+
+const Required = styled.span`
+    color: var(--red-color);
+    font-size: 2rem;
+
+    line-height: 0.75;
 `;
 
 const InputStyled = styled.input`
@@ -27,11 +37,19 @@ const InputStyled = styled.input`
     outline: none;
 `;
 
-export function Input({ description, type = "text" }) {
+export function Input({ description, type = "text", required, onChange }) {
     return (
         <Label>
-            <Description>{description}</Description>
-            <InputStyled type={type} />
+            <Description>
+                {description}
+                <Required>{required ? "*" : ""}</Required>
+            </Description>
+
+            <InputStyled
+                type={type}
+                required
+                onChange={onChange}
+            />
         </Label>
     );
 }
