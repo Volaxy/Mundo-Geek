@@ -3,7 +3,7 @@ import axios from "axios";
 import { ProductError } from "../utils/errors/productError";
 
 const productAPI = axios.create({
-    baseURL: "http://localhost:3000/products",
+    baseURL: `${import.meta.env.VITE_BACKEND_URL}/products`,
 });
 
 async function createProduct(url, category, name, price, description) {

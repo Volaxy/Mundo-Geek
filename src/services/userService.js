@@ -3,7 +3,7 @@ import axios from "axios";
 import { UserError } from "../utils/errors/userError";
 
 const userAPI = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: `${import.meta.env.VITE_BACKEND_URL}`,
 });
 
 async function register(username, password) {

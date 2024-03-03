@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Product1 from "./images/product-1.png";
+
+import BackupUrl from "./images/backup-url.svg";
 
 const ProductWrapper = styled.section`
     display: flex;
@@ -34,13 +35,13 @@ const ViewProduct = styled.button`
     cursor: pointer;
 `;
 
-export function Product() {
+export function Product({ urlImage, name, price, description }) {
     return (
         <ProductWrapper>
-            <ProductImage src={Product1} alt="" />
+            <ProductImage src={urlImage || BackupUrl} alt="" />
 
-            <Title>Produto XYZ</Title>
-            <Price>R$ 60,00</Price>
+            <Title>{name}</Title>
+            <Price>R$ {price}</Price>
 
             <ViewProduct>Ver Produto</ViewProduct>
         </ProductWrapper>

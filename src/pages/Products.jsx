@@ -8,6 +8,10 @@ const ProductsStyled = styled.section`
     background-color: var(--all-products-background-color);
     
     padding: 3rem 2rem;
+
+    @media screen and (min-width: 1280px) {
+        padding: 4rem 7.5rem;
+    }
 `;
 
 const Header = styled.header`
@@ -36,6 +40,7 @@ const AllProducts = styled.section`
     @media screen and (min-width: 1280px) {
         grid-template-columns: repeat(6, 1fr);
     }
+    
 `;
 
 export function Products() {

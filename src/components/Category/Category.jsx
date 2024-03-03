@@ -57,11 +57,11 @@ const Products = styled.section`
     }
 `;
 
-export function Category() {
+export function Category({ name, products }) {
     return (
         <CategoryWraper>
             <Header>
-                <Title>Star Wars</Title>
+                <Title>{name.charAt(0).toUpperCase() + name.slice(1)}</Title>
 
                 <NavLink to="/products">
                     <ViewAll>
@@ -72,12 +72,17 @@ export function Category() {
             </Header>
 
             <Products>
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
+                {products.map(product => {
+                    return (
+                        <Product
+                            key={product._id}
+                            urlImage={product.url}
+                            name={product.name}
+                            price={product.price}
+                            description={product.description}
+                        />
+                    );
+                })}
             </Products>
         </CategoryWraper>
     );

@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import { Banner } from "../components/Banner/Banner";
 import { Category } from "../components/Category/Category";
+import { getCategoryByName } from "../services/categoryService";
+import { useEffect, useState } from "react";
 
 const ProductsStyled = styled.section`
     background-color: var(--products-background-color);
@@ -20,14 +22,33 @@ const ProductsStyled = styled.section`
 `;
 
 export function Index() {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        fetchCategories();
+    }, []);
+
+    async function fetchCategories() {
+        const categories = await getCategoryByName("consoles");
+
+        setCategories(categories);
+    }
+
     return (
         <main>
             <Banner />
 
             <ProductsStyled>
-                <Category />
-                <Category />
-                <Category />
+                {categories.map(category => {
+                    return (
+                        category.products.length > 0 &&
+                        <Category
+                            key={category._id}
+                            name={category.name}
+                            products={category.products}
+                        />
+                    );
+                })}
             </ProductsStyled>
         </main>
     );
