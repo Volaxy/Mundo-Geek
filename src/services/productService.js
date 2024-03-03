@@ -24,6 +24,19 @@ async function createProduct(url, category, name, price, description) {
     }
 }
 
+async function getProducts() {
+    try {
+        const response = await productAPI.get();
+
+        const products = response.data;
+
+        return products;
+    } catch(error) {
+        throw new ProductError(error.response ? error.response.data.error : error.message);
+    }
+}
+
 export {
     createProduct,
+    getProducts,
 };

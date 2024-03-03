@@ -10,6 +10,8 @@ const ProductWrapper = styled.section`
 
 const ProductImage = styled.img`
     width: 100%;
+
+    border-radius: 20px;
 `;
 
 const Title = styled.h3`
