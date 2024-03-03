@@ -68,7 +68,7 @@ const GlobalStyle = createGlobalStyle`
 
 
         /*=============== MEASURES ===============*/
-        --tablet-layout-size: 48rem;
+        --padding-left-right: 1rem;
     }
     
     /*============================== GENERIC ELEMENTS ==============================*/
@@ -92,6 +92,12 @@ const GlobalStyle = createGlobalStyle`
     
     /*=============== RESPONSIVE LAYOUTS ===============*/
     @media screen and (min-width: 768px) {
+        /*============================== Configurations ==============================*/
+        :root {
+            /*=============== MEASURES ===============*/
+            --padding-left-right: 2rem;
+        }
+
         /*============================== GENERIC ELEMENTS ==============================*/
         html,
         body {
@@ -110,6 +116,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
     @media screen and (min-width: 1280px) {
+        /*============================== Configurations ==============================*/
+        :root {
+            /*=============== MEASURES ===============*/
+            --padding-left-right: 4rem;
+        }
+
         /*============================== GENERIC ELEMENTS ==============================*/
         html,
         body {

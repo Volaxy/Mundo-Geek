@@ -3,6 +3,7 @@ import styled from "styled-components";
 import BannerBackground from "./images/banner.png";
 
 import { Button } from "../Button/Button";
+import { NavLink } from "react-router-dom";
 
 const BannerStyled = styled.header`
     background-image: url(${BannerBackground});
@@ -13,12 +14,12 @@ const BannerStyled = styled.header`
 
     display: flex;
 
-    padding: 1rem;
+    padding: 1rem var(--padding-left-right);
 
     color: var(--white-text-color);
 
     @media screen and (min-width: 1280px) {
-        padding: 2rem 7.5rem;
+        padding: 2rem var(--padding-left-right);
     }
 `;
 
@@ -43,12 +44,14 @@ export function Banner() {
                 <Title>Fevereiro Promocional</Title>
                 <SubTitle>Produtos selecionados com 33% de desconto</SubTitle>
                 
-                <Button
-                    backgroundColor="var(--button-background-color)"
-                    color="var(--white-text-color)"
-                >
-                    Ver Consolas
-                </Button>
+                <NavLink to="/products">
+                    <Button
+                        backgroundColor="var(--button-background-color)"
+                        color="var(--white-text-color)"
+                    >
+                        Ver todos os Produtos
+                    </Button>
+                </NavLink>
             </ContentWraper>
         </BannerStyled>
     );

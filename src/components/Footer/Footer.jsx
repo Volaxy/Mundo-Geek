@@ -11,6 +11,8 @@ const FooterStyled = styled.footer`
 `;
 
 const FooterGridWraper = styled.div`
+    padding: 1rem var(--padding-left-right);
+
     @media screen and (min-width: 768px) {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -19,7 +21,7 @@ const FooterGridWraper = styled.div`
     @media screen and (min-width: 1280px) {
         grid-template-columns: repeat(2, 1fr);
 
-        padding: 4rem 6rem;
+        padding: 4rem var(--padding-left-right);
     }
 `;
 
@@ -39,8 +41,8 @@ const LogoStyled = styled.img`
 
     @media screen and (min-width: 768px) {
         width: 10rem;
-        
-        margin-left: 1rem;
+
+        margin: initial;
     }
 `;
 
@@ -50,7 +52,6 @@ const Links = styled.ul`
     gap: 1.5rem;
 
     margin-top: 1rem;
-    padding: 1rem;
 
     @media screen and (min-width: 1280px) {
         margin-top: 0;
@@ -69,7 +70,6 @@ const Form = styled.form`
     flex-direction: column;
     
     margin-top: 2rem;
-    padding: 1rem;
 
     text-align: left;
 

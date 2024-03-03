@@ -12,12 +12,14 @@ const ProductsStyled = styled.section`
     flex-direction: column;
     gap: 1rem;
 
+    padding: 1rem var(--padding-left-right);
+
     @media screen and (min-width: 768px) {
         padding-top: 1.5rem;
     }
 
     @media screen and (min-width: 1280px) {
-        padding: 4rem 7.5rem;
+        padding: 4rem var(--padding-left-right);
     }
 `;
 

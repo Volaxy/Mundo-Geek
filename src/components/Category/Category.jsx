@@ -5,15 +5,7 @@ import { Product } from "./Product/Product";
 import { NavLink } from "react-router-dom";
 
 const CategoryWraper = styled.article`
-    padding: 1rem;
-
-    @media screen and (min-width: 768px) {
-        margin-bottom: 2rem;
-    }
-
-    @media screen and (min-width: 1280px) {
-        padding: unset;
-    }
+    
 `;
 
 const Header = styled.header`

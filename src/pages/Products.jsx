@@ -7,10 +7,10 @@ import { NavLink } from "react-router-dom";
 const ProductsStyled = styled.section`
     background-color: var(--all-products-background-color);
     
-    padding: 3rem 2rem;
+    padding: 3rem var(--padding-left-right);
 
     @media screen and (min-width: 1280px) {
-        padding: 4rem 7.5rem;
+        padding: 4rem var(--padding-left-right);
     }
 `;
 

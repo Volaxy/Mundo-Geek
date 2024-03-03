@@ -13,14 +13,14 @@ const HeaderStyled = styled.header`
     align-items: center;
     gap: 1rem;
 
-    padding: 1rem;
+    padding: 1rem var(--padding-left-right);
 
     @media screen and (min-width: 768px) {
         align-items: stretch;
     }
 
     @media screen and (min-width: 1280px) {
-        padding: 2rem 5rem;
+        padding: 2rem var(--padding-left-right);
     }
 `;
 
