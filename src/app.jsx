@@ -65,6 +65,7 @@ const GlobalStyle = createGlobalStyle`
         --input-placeholder-text-color: var(--silver-chalice-color);
         --develop-by-text-color: var(--tundora-color);
         --error-message-text-color: var(--red-color);
+        --required-input-text-color: var(--red-color);
 
 
         /*=============== FONTS ===============*/

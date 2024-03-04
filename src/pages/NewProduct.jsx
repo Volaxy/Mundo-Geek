@@ -6,6 +6,7 @@ import { Input } from "../components/Input/Input";
 import { Button } from "../components/Button/Button";
 import { InputErrorMessage } from "../components/Input/InputErrorMessage/InputErrorMessage";
 import { createProduct } from "../services/productService";
+import { createCategory, getCategoryByName } from "../services/categoryService";
 
 const Form = styled.form`
     background-color: var(--new-product-background-color);
@@ -72,6 +73,32 @@ export function NewProduct() {
         if(isInvalidForm()) return;
 
         try {
+            const fetchedCategory = await getCategoryByName(category);
+            
+            if(!fetchedCategory) {
+                toast("Essa categoria não existe, gostaria de cria-la?", {
+                    action: {
+                        label: "Criar",
+                        onClick: async () => {
+                            await createCategory(category);
+
+                            toast.success("Categoria criada com sucesso!", {
+                                style: {
+                                    height: "fit-content",
+                                    fontSize: "1rem",
+                                }
+                            });
+                        }
+                    },
+                    style: {
+                        height: "fit-content",
+                        fontSize: "1rem",
+                    },
+                });
+
+                return;
+            }
+
             await createProduct(url, category, name, price, description);
 
             const message = `Produto criado com sucesso!`

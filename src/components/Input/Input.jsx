@@ -24,7 +24,7 @@ const Description = styled.span`
 `;
 
 const Required = styled.span`
-    color: var(--red-color);
+    color: var(--required-input-text-color);
     font-size: 2rem;
 
     line-height: 0.75;
