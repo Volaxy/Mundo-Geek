@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import { GoArrowRight } from "react-icons/go";
 
 import { Product } from "./Product/Product";
-import { NavLink } from "react-router-dom";
 
 const CategoryWraper = styled.article`
     
@@ -55,12 +56,12 @@ export function Category({ name, products }) {
             <Header>
                 <Title>{name.charAt(0).toUpperCase() + name.slice(1)}</Title>
 
-                <NavLink to="/products">
+                <Link to="/products">
                     <ViewAll>
                         Ver tudo
                         <GoArrowRight style={{ color: "var(--view-all-products-text-color)" }} />
                     </ViewAll>
-                </NavLink>
+                </Link>
             </Header>
 
             <Products>
@@ -68,6 +69,7 @@ export function Category({ name, products }) {
                     return (
                         <Product
                             key={product._id}
+                            id={product._id}
                             urlImage={product.url}
                             name={product.name}
                             price={product.price}

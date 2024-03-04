@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { Button } from "../components/Button/Button";
 import { Product } from "../components/Category/Product/Product";
-import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { getProducts } from "../services/productService";
 
 const ProductsStyled = styled.section`
@@ -62,14 +62,14 @@ export function Products() {
         <ProductsStyled>
             <Header>
                 <Title>Todos os Produtos</Title>
-                <NavLink to="/new-product">
+                <Link to="/new-product">
                     <Button
                         backgroundColor="var(--button-background-color)"
                         color="var(--white-text-color)"
                     >
                         Adicionar Produto
                     </Button>
-                </NavLink>
+                </Link>
             </Header>
 
             <AllProducts>
@@ -77,6 +77,7 @@ export function Products() {
                     return (
                         <Product
                             key={product._id}
+                            id={product._id}
                             urlImage={product.url}
                             name={product.name}
                             price={product.price}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Input } from "../components/Input/Input";
 import { Button } from "../components/Button/Button";
@@ -44,7 +44,7 @@ const RegisterAccount = styled.p`
     font-size: 0.75rem;
 `;
 
-const RegisterLink = styled(NavLink)`
+const RegisterLink = styled(Link)`
     &:hover {
         text-decoration: underline;
     }

@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
 import { Button } from "../Button/Button";
-import { NavLink } from "react-router-dom";
 
 import Logo from "../../images/logo.svg";
 import User from "./images/user.svg";
@@ -24,7 +24,7 @@ const HeaderStyled = styled.header`
     }
 `;
 
-const NavLinkLogoStyled = styled(NavLink)`
+const LinkLogoStyled = styled(Link)`
     align-self: center;
 `;
 
@@ -79,9 +79,9 @@ const MagnifyingGlassIcon = styled(FaMagnifyingGlass)`
 export function Header({ user }) {
     return (
         <HeaderStyled>
-            <NavLinkLogoStyled to="/">
+            <LinkLogoStyled to="/">
                 <LogoStyled src={Logo} alt="Logo do Mundo Geek" />
-            </NavLinkLogoStyled>
+            </LinkLogoStyled>
 
             <SearchWrapper>
                 <SearchInput className="tablet desktop" type="text" placeholder="O que deseja buscar?" />
@@ -91,14 +91,14 @@ export function Header({ user }) {
             {user ? 
                 <img src={User} alt="" />
                 :
-                <NavLink to="/login">
+                <Link to="/login">
                     <Button
                         width="7rem"
                         widthTablet="12.5rem"
                     >
                         Login
                     </Button>
-                </NavLink>
+                </Link>
             }
 
             <FaMagnifyingGlass className="mobile" size="1.25rem" />

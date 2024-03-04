@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-import BackupUrl from "./images/backup-url.svg";
+import BackupUrl from "/src/images/backup-url.svg";
 
 const ProductWrapper = styled.section`
     display: flex;
@@ -24,7 +25,7 @@ const Price = styled.h4`
     font-weight: bold;
 `;
 
-const ViewProduct = styled.button`
+const ViewProduct = styled(Link)`
     background-color: unset;
 
     border: none;
@@ -37,7 +38,7 @@ const ViewProduct = styled.button`
     cursor: pointer;
 `;
 
-export function Product({ urlImage, name, price, description }) {
+export function Product({ id, urlImage, name, price, description }) {
     return (
         <ProductWrapper>
             <ProductImage src={urlImage || BackupUrl} alt="" />
@@ -45,7 +46,12 @@ export function Product({ urlImage, name, price, description }) {
             <Title>{name}</Title>
             <Price>R$ {price}</Price>
 
-            <ViewProduct>Ver Produto</ViewProduct>
+            <ViewProduct
+                to={`/product/${id}`}
+                state={{ id, urlImage, name, price, description }}
+            >
+                Ver Produto
+            </ViewProduct>
         </ProductWrapper>
     );
 }

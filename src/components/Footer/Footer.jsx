@@ -102,6 +102,10 @@ const Message = styled.textarea`
     &:focus {
         outline: 2px solid var(--input-focus-border-color);
     }
+
+    &::placeholder {
+        color: var(--input-placeholder-text-color);
+    }
 `;
 
 const DevelopBy = styled.div`

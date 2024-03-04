@@ -5,14 +5,16 @@ import { Toaster } from "sonner";
 
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
-import { Index } from "./pages/Index";
+import { Home } from "./pages/Home";
 import { Register } from "./pages/register";
 import { Login } from "./pages/Login";
 import { Products } from "./pages/Products";
 import { NewProduct } from "./pages/NewProduct";
+import { ProductInfo } from "./pages/ProductInfo";
 
 import 'reset-css';
 import 'normalize.css';
+import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 
 const GlobalStyle = createGlobalStyle`
     /*============================== Configurations ==============================*/
@@ -35,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
         --input-background-color: var(--white-color);
         --search-input-background-color: var(--wild-sand-color);
         --products-background-color: var(--wild-sand-color);
+        --product-background-color: var(--wild-sand-color);
         --login-background-color: var(--wild-sand-color);
         --all-products-background-color: var(--wild-sand-color);
         --new-product-background-color: var(--wild-sand-color);
@@ -59,6 +62,7 @@ const GlobalStyle = createGlobalStyle`
         --footer-link-text-color: var(--tundora-color);
         --form-legend-text-color: var(--tundora-color);
         --input-description-text-color: var(--silver-chalice-color);
+        --input-placeholder-text-color: var(--silver-chalice-color);
         --develop-by-text-color: var(--tundora-color);
         --error-message-text-color: var(--red-color);
 
@@ -151,14 +155,16 @@ export function App() {
     return (
         <BrowserRouter>
             <GlobalStyle />
+            <ScrollToTop />
 
             <Header user={user} />
 
             <Routes>
-                <Route path="/" element={<Index />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login onAuthenticate={authenticate} />} />
                 <Route path="/products" element={<Products />} />
+                <Route path="/product/:id" element={<ProductInfo />} />
                 <Route path="/new-product" element={<NewProduct />} />
             </Routes>
 

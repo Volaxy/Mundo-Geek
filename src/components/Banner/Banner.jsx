@@ -1,9 +1,9 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import BannerBackground from "./images/banner.png";
 
 import { Button } from "../Button/Button";
-import { NavLink } from "react-router-dom";
 
 const BannerStyled = styled.header`
     background-image: url(${BannerBackground});
@@ -44,14 +44,14 @@ export function Banner() {
                 <Title>Fevereiro Promocional</Title>
                 <SubTitle>Produtos selecionados com 33% de desconto</SubTitle>
                 
-                <NavLink to="/products">
+                <Link to="/products">
                     <Button
                         backgroundColor="var(--button-background-color)"
                         color="var(--white-text-color)"
                     >
                         Ver todos os Produtos
                     </Button>
-                </NavLink>
+                </Link>
             </ContentWraper>
         </BannerStyled>
     );
