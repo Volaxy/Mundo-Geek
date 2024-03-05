@@ -147,7 +147,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export function App() {
-    const [user, setUser] = useState("");
+    const [user, setUser] = useState(undefined);
 
     function authenticate(user) {
         setUser(user);

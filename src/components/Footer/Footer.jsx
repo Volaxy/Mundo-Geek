@@ -1,8 +1,12 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { toast } from "sonner";
 
-import Logo from "../../images/logo.svg";
 import { Input } from "../Input/Input";
 import { Button } from "../Button/Button";
+import { InputErrorMessage } from "../Input/InputErrorMessage/InputErrorMessage";
+
+import Logo from "../../images/logo.svg";
 
 const FooterStyled = styled.footer`
     background-color: var(--footer-background-color);
@@ -92,12 +96,14 @@ const Inputs = styled.div`
 `;
 
 const Message = styled.textarea`
+    width: 100%;
     height: 5rem;
 
     border: none;
     border-radius: 0.25rem;
     box-shadow: 0 2px 0 -1px var(--input-bottom-border-color);
     padding: 0.5rem 0.75rem;
+    box-sizing: border-box;
 
     &:focus {
         outline: 2px solid var(--input-focus-border-color);
@@ -121,6 +127,57 @@ const DevelopBy = styled.div`
 `;
 
 export function Footer() {
+    const [name, setName] = useState("");
+    const [message, setMessage] = useState("");
+
+    const [showNameError, setShowNameError] = useState(false);
+    const [textNameError, setTextNameError] = useState("");
+    const [showMessageError, setShowMessageError] = useState(false);
+    const [textMessageError, setTextMessageError] = useState("");
+    
+    function handleNameChange(event) {
+        setName(event.target.value);
+        setShowNameError(false);
+    }
+    
+    function handleMessageChange(event) {
+        setMessage(event.target.value);
+        setShowMessageError(false);
+    }
+
+    async function handleOnSendMessage(event) {
+        event.preventDefault();
+
+        if(isInvalidForm()) return;
+
+        toast.success("Mensagem enviada!", {
+            style: {
+                height: "fit-content",
+                fontSize: "1rem",
+            }
+        });
+    }
+
+    function isInvalidForm() {
+        let isInvalid = false;
+
+        if(name === "") {
+            setShowNameError(true);
+            setTextNameError("O seu nome  é obrigatório");
+
+            isInvalid = true;
+        }
+
+        if(message === "") {
+            setShowMessageError(true);
+            setTextMessageError("A mensagem que você quer enviar é obrigatória");
+
+            isInvalid = true;
+        }
+
+        return isInvalid;
+    }
+
     return (
         <FooterStyled>
             <FooterGridWraper>
@@ -139,12 +196,18 @@ export function Footer() {
                     </nav>
                 </FooterNav>
 
-                <Form>
+                <Form onSubmit={handleOnSendMessage}>
                     <Legend>Fale com a gente</Legend>
 
                     <Inputs>
-                        <Input description="Nome" />
-                        <Message placeholder="Escreva sua mensagem"></Message>
+                        <div>
+                            <Input description="Nome" onChange={handleNameChange} />
+                            <InputErrorMessage showError={showNameError} message={textNameError} />
+                        </div>
+                        <div>
+                            <Message placeholder="Escreva sua mensagem" onChange={handleMessageChange}></Message>
+                            <InputErrorMessage showError={showMessageError} message={textMessageError} />
+                        </div>
                         
                         <Button
                             backgroundColor="var(--button-background-color)"
